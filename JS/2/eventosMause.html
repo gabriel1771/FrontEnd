@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        //CONSULTAR SE AS TAGS HTML SUPORTAM ESSE TIPO DE EVENTO
+
+        function acao1(){
+            alert('Event disparado')
+        }
+        function acao2(){
+            alert('Event2 disparado')
+        }
+    </script>
+
+</head>
+<body>
+    <!-- onclick -->
+    <div onclick="acao1()" style="background-color: #ccc; height: 150px; width: 150px;"></div>
+
+    <!-- ondblclick -->
+    <div ondblclick="acao1()" style="background-color: #177db8; height: 150px; width: 150px;"></div>
+
+    <!-- onmouseup -->
+    <div onmouseup="acao1()" style="background-color: #17b860; height: 150px; width: 150px;"></div>
+    
+    <!-- onmouseover -->
+    <div onmouseover="acao1()" style="background-color: #e4e719; height: 150px; width: 150px;"></div>
+
+    <!-- onmouseout -->
+    <div onmouseout="acao1()" style="background-color: #e79f19; height: 150px; width: 150px;"></div>
+
+    <!-- misto -->
+    <div onmouseout="acao1()" ondblclick=acao2() style="background-color: #e75a19; height: 150px; width: 150px;"></div>
+    
+</body>
+</html>

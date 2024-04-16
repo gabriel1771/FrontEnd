@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>FlexBok</title>
+    <meta charset="utf-8">
+    <style  type="text/css">
+        #conteudo {
+            background: #dcdcdc;
+            height: 600px;
+            display: flex;
+        }
+
+        .item {
+            /* width: 200px; */
+            height: 100px;
+            margin: 10px;
+            background: white;
+            border: 1px solid gray ;
+
+/*-----------------------------------------------------------------*/
+            /*define a capacidade de aumento de um item retornando
+              ao seu valor original quando diminuir
+            
+            */
+            flex-grow: 0 /*0tamanho orginal*/;
+/*-----------------------------------------------------------------*/
+            /*define a capacidade de diminuir de um item retornando 
+              ao seu tamanho original ao aumentar
+            
+            */
+            flex-shrink: 1 /*0tamanho orginal*/;
+/*-----------------------------------------------------------------*/
+            /*define o tamanho inicial do item antes da distribuição
+              de espaço restante
+            
+            */
+            flex-basis: 400px /*0tamanho orginal*/;
+/*-----------------------------------------------------------------*/
+        }  
+
+        .item5{
+            flex-shrink: 1;
+        }
+
+        .item6{
+            flex-shrink: 2;
+        }
+
+        .item7{
+            flex-shrink: 5;
+        }
+
+        .item1{
+            flex-grow: 1;
+        }
+
+        .item2{
+            flex-grow: 2;
+        }
+        
+        .order1{
+/*-----------------------------------------------------------------*/
+            /*altera ordem dos elemtos*/
+            order: 1;
+/*-----------------------------------------------------------------*/
+        }
+        .order2{
+            order: 2;
+        }
+        .order3{
+            order: 3;
+        }
+        .order4{
+            order: 4;
+        }
+
+        .order{
+            order: -2;
+        }
+
+
+        
+    </style>
+    
+    
+    </head>
+    
+    <body>
+        
+        <h1>FlexBok</h1>
+        <div id="conteudo">
+            <div class="item ">01</div>
+            <div class="item ">02</div>
+            <!-- <div class="item order">03</div> -->
+            <div class="item  ">03</div>
+            <div class="item  ">04</div>
+        </div>
+    </body>
+
+    
+</html>

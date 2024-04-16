@@ -1,0 +1,241 @@
++ ESTRUTURA HTML (USAR AS TAGS ESPECIAIS INPUTS PARA FICAR NO LUGAR DO JAVASCRIPYT)
+    - DIV(blocker generico) SPAN(laind generico) TAG(blocker(um em cima do outro e ocupa toda a area horizontal) ou 
+    inline(um do lado do outro ocupa somente a area que ele usa) ou block-inline(quando não tem mais espaço do lado ai ele
+    passa um pra baixo, e ocupa somente a area que ele usa ) )
+    ///////
+                                ((((((((display FLEX E GRID))))))))
+
+            ((((((((((((( MENTALIZA TUDO EM CONTEINER E ITENS )))))))))))))
+
+             (((((((( NO CONTAINER COLOCA ROW E AUTOMATICAMENTE OS ITENS SÃO CRIADOS))))))))
+
+                (((((((((((((( colocar em cada bloco margin:0 e padding:0 ))))))))))))))
+                (((((((((( sempre zerar as propiedades padrãos, se não o leyout talvez não fique do jeito que eu 
+                                                       queira    ))))))))))
+
+    - body(cria primeiro o conteiner que é a div principal e depois cria  a tag header depois uma div conteudo e depois 
+    a tag footer)
+        - principal(div id="principal" class="container col- col-sm- ")
+            - HEADERtag
+                - BLOCOS(div id="caixa")
+                - NAVtag
+            - conteudo(div id="conteudo")
+                - BLOCOS(div id="caixa")
+                - NAVtag
+                - article tag
+                - aside tag
+                - ...
+            - FOOTERtag
+                - BLOCOS(div id="caixa")
+    
+-----------------------------------------------------------------------------------------------------------------------
+
++ MODOS DE ORGANIZAR as PROPIEDADES
+  - arquivo html (SOMENTE PARA CASOS MUITO ESPECIFICOS)
+    - style="propiedade: valor"
+    
+  - arquivo css(um arquivo css pro index que vai determinar o padrão do header e do footer e pra cada pagina um arquivo
+  css diferente fazendo só o conteudo e se o index tiver em seu conteudo uma estrutura que repete nas outras paginas 
+  ai pode ser usado alguamas coisas em conjunto)
+    - principal
+        * Limpando formatações padrões(
+            *{
+                padding:0;
+                margin:0;
+                ...
+            }
+        )
+        *(formatações que englobam tudo(body),(font, background, boxmodel, espaço...), 
+        *(formatações que englobam tudo(div principal), header, nav, footer 
+        *formatações pelo nome de tags gerais e **pro atributo input[type="radio]{propiedade}
+    
+-------------------
+
+    - aqui cada bloco vai ser separado também
+
+    - media query (separado em head/ conteudo / footer), (separado por bloco)
+
+--------------------
+
+    - HEADER(inicio da pagina) class, id, seletores filhos(#test ou .teste ou p > a{propiedade}(só estiliza os links 
+que são filhos de tal elemento html)), **h1 ou class ou id + p{propiedade}, h1 ou class ou id ~ p{propiedade},
+*formatações pelo nome de tags #lugar h1, #lugar a:houver{ propiedade} que se dividem em// principal//, header//,
+         conteudo,// footer// )
+
+--------------------
+
+    - CONTEUDO (meio da pagina) class, id, seletores filhos(#test ou .teste ou p > a{propiedade}(só estiliza os links 
+que são filhos de tal elemento html)), **h1 ou class ou id + p{propiedade}, h1 ou class ou id ~ p{propiedade},
+*formatações pelo nome de tags #lugar h1, #lugar a:houver{ propiedade} que se dividem em// principal//, header//,
+         conteudo,// footer// ) 
+
+---------------------
+
+    - FOOTER(fim da pagina)class, id, seletores filhos(#test ou .teste ou p > a{propiedade}(só estiliza os links 
+que são filhos de tal elemento html)), **h1 ou class ou id + p{propiedade}, h1 ou class ou id ~ p{propiedade},
+*formatações pelo nome de tags #lugar h1, #lugar a:houver{ propiedade} que se dividem em// principal//, header//,
+         conteudo,// footer// )
+
+    - SELETORES 
+        - **de todos 
+        - EMBAIXO ** #bloco-header-1, #bloco-header-2{ propiedade}(seletor descendente)
+        - EMBAIXO **#test ou .teste ou p > a{propiedade}(só estiliza os links que são filhos DIRETO de tal elemento html)
+        - EMBAIXO **h1 ou class ou id ~ p{propiedade}(a tag p que tiver  em baixo de uma tag h1 e na mesma "caixa" vai receber a propiedade)
+        - EMCIMA **#lugar h1, #lugar a:houver{ propiedade} 
+        - EMBAIXO **h1 ou class ou id + p{propiedade}(a tag p que tiver  em baixo de uma tag h1, vai receber a propiedade)
+        - EMCIMA ** SIMPLES: TAGS{propiedade}  
+        - EMBAIXO ** SIMPLES: ID{propiedade} 
+        - EMBAIXO ** SIMPLES: CLASS{propiedade} ou uma class somente para tag(p.verde{propiedade})  (precisa estar gruadado)
+        - EMCIMA **pro atributo input[type="radio]{propiedade} 
+    
+    - HERANÇA e ESPECIFICIDADE
+        - body.home #navegação a#home(
+        TODA TAG A QUE TIVER UM ID HOME QUE ESTIVER DENTRO DE UM ID NAVAGAÇÃO QUE TIVER DENTRO DE UMA 
+        TAG BODY QUE TEM UMA CLASS HOME, VAI RECEBER TAL PROPIEDADES
+        )
+
+-----------------------------------------------------------------------------------------------------------------------
+
++ MODOS DE DEFINIR PROPIEDAS(estudar sempre pelo generico e ir a fundo em todos os parâmetros)
+    /*jeito mais rapido e generico*/
+        H1{
+            border: 3px dashed green ;
+        }
+                            
+    /*jeito mais especificos de definir propiedades de uma propiedade*/
+        .TESTE OU #TESTE{ 
+            border-color: red green ((horizontal/vertical)) blu black; (define as cores dos quatros lados da borda)
+            border-width: 4px 5px ((horizontal/vertical)) 2px 7px; (define as expessura dos quatro lados da borda )
+            border-style: border-style: solid double ((horizontal/vertical)) dotted dashed; (define o tipo dos quatro lados
+            da borda)
+        }
+
+-----------------------------------------------------------------------------------------------------------------------
+
++ Propiedades:*****-o- ou -webkit ou -moz (ao colocar isso antes das propieades novas, os broser vão entender)
+( ao pensar em definir uma propiedade, pensar, sera que tem uma propiedade pra isso no bootstrap)
+------------------------------------------------------------
+    - text 
+    - font
+    - @font-face(adiciona uma fonte customizada ao servidor )
+    - line(estiliza a linha)(line-heigth:40px(altura da linha))
+    - letter-spasing ou letter(espaço entre as letras)
+--------------------------------------------------------------
+    - background imagens, cores( rgb(222, 231,0), line-gradient(to bottom #faa600, #f68a00), radial(cores, cores, cores, cores), 
+    rgba(234, 222,0, 0.5);) ...
+--------------------------------------------------------------
+    - boxmodel(margin, padding, border, box)|(px, %, em, auto(mesma medida ambos os lados)) ***muitas tags tem valores padrões***
+---------------------------------------------------------------
+    - espaço(col-2...) (width(min-width e max-width), heigth(min-heigth e max heigth))
+---------------------------------------------------------------
+    - display(block, inline, inline-block) e none
+---------------------------------------------------------------
+    - ****display:flex PARA CONTAINER coloca class="row ..."(direção, quebra, horizontal e vertical ) E PARA
+     ITEM(ordem, proporção de crescimento e de diminuição)
+    - posicionamento(static, relativ, absolute, fixed, z-index)
+    - floatDIRECIONAMENTO (vai pra outra dimenção com isso podemos direcionar nossos blocos a esquerda a direta ao 
+topo ou ao final, clear(ele bota o elemento que não esta flutuando  pra direitam ou esquerda ou pra 
+baixo levando enconta os elementos flutuantes(não deixando eles flutuarem sob o elemento que não esta flutuando)))
+----------------------------------------------------------------
+    - media query(-font-size, paddind e margin, display:none ...)
+---------------------------------------------------------------
+    - links(estados de: nunca acessado, ja acessado, passando em cima, clicando)
+    - list(estilisa ul e ol)(list-style-type: none, ...)
+    - overflow(ela corta os elementos conforme o tamanho do width)
+    - cursor(o mause)
+    - propiedades que são de tags legitimas
+    - ****@keyframes(determina o nome e o que a animação faz)
+    - ****animation(determina o nome o tempo de duração o tempo de delay quantas vezes repete e a direção da animação)
+    - ****transition: (cria um estado houver do elemento e depois coloca transition e determina o tempo da mudança)
+---------------------------------------------------------------
+    - especificação(!inportant;(não recomendado com frequencia))
+    
+-----------------------------------------------------------------------------------------------------------------------
+
++ propiedade bootstrap( ao pensar em definir uma propiedade, pensar, sera que tem uma propiedade pra isso no bootstrap)
+(((( ao usar uma biblioteca ou similhar, pensar como usar e não como ele é criada ...))))
+
+-WHIDTH(col-12 col-sm-10 col-md-12 col-lg-10 col-xl-10)
+--------------------------------------------------------------
+
+-flex-box(coloca "row" e também decide usa todas as propiedades do container-flex ) (e nos 
+itens usa todas as propiedades dos flex-itens)
+(ISSO TUDO COM SUPORTE MEDIA-QUERY)
+-----------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
++ coisas
+    - bootstrap(resumo) & projeto-03 e -04(css avançado)
+        -(((((((((( menu horizontal e vertical responsivo - usar a tag NAV e o bootstrap)))))))))) 
+        
+    -bootstrap(resumo)
+        - (((((((((((((((((((( COROUSEL DE FOTOS OU TEXTOS OU OS DOIS ))))))))))))))))))))
+
+    -bootstrap(resumo)
+        - (((((((((((((((((((( collaps de fotos ou textos...(ler mais...) ))))))))))))))))))))
+
+    - projeto-07.html(css avançado)
+        - ((((((( imagens cumpridas com background(max-width e min-width) ))))))), imagens liquidas com largura em 
+%(max-width tamanho de px que a imagem tem)
+        - adiciona imagens para trazer efeitos diversos nos elmentos html e layouts.
+
+    - projeto-09_1.html(css avançado)
+        - (((((( formatações em formularios ))))))
+        - (((((((((( login ))))))))))
+
+    - projeto-08.html(css avançado)
+        - (((((((( formatação em tabelas ))))))))
+
+    - projeto-10.html(css avançado)
+        - ((((((((( EFEITO PARALLAX)))))))))
+
+    - projeto-11.html(css avançado)
+        - ((((((FONTES CUSTOMIZADAS NO SERVIDOR))))))
+
+    - projeto-09.html(css3 html5 avançado)
+        - ((((((((((( NO LUGAR DO JAVASCRIPYT )))))))))))
+
+-----------------------------------------------------------------------------------------------------------------------
+
++ modelos de sites
+    - site que utiliza a mesma estrutura em todas as paginas só que diferentes numeros de colunas
+
+-----------------------------------------------------------------------------------------------------------------------
+
++ problemas
+    - pode ter problemas com especificação
+    - pode ter problemas com o tipo de display por isso o elemento não recebe tal propiedade
+
+-----------------------------------------------------------------------------------------------------------------------
+
++ recomendações CEO
+    - imagem já com varios tamanhos diferentes e usando o php, colocando conforme a tela o nome da imagem, 
+    e não definir o tamanho no css.
+    - adicionar um arquivo css normalize ((((((html5 css3 especial/projeto-01))))))
+
+-----------------------------------------------------------------------------------------------------------------------
+
++pacotes
+    - npm normalize
+    - npm fontes personalizadas
+    - npm bootstrap
+    - npm icones
+
+-------------------------------------------------------------------------------------------------------------------------
+
++ ambiente de trabalho
+    - node.js(baixar os pacotes)
+
+-----------------------------------------------------------------------------------------------------------------------
+
++ estrutura de diretórios
+
+    -projeto
+        - views(htmls)
+        - style
+            -css
+            -pacotes
+            -imagens
+            -js

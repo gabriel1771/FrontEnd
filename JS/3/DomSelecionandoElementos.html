@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    
+
+</head>
+<body>
+    
+    <input
+        type="text"
+        placeholder="Digite seu nome"
+        id="nome_usuario"
+        class="campo_texto"
+        name="nome"
+    >
+    <script>
+        /*---------------------------------------------*/
+        //pega a tag inteira pelo ID (e pega somente UM ELEMENTO)
+        console.log(document.getElementById('nome_usuario'))
+
+        /*---------------------------------------------*/
+        //pega uma coleção de tags do mesmo tipo(TagName)
+        console.log(document.getElementsByTagName('input'))
+
+        //mesma coisa porem com o nome da tag
+        console.log(document.getElementsByClassName('campo_texto'))
+
+        //mesma coisa so que pelo atributo name
+        console.log(document.getElementsByName('nome'))
+    </script>
+</body>
+</html>

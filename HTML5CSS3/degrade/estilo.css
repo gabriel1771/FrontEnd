@@ -1,0 +1,25 @@
+#caixa{
+    width: 300px;
+    height: 300px;
+    /*background: url("camera.png");*/
+    /* background: linear-gradient(to left,blue, green, white);
+    background: linear-gradient(45deg,blue, green, white); */
+    background: radial-gradient(red, green, yellow)
+}
+
+#caixa h1{
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/*#caixa{
+    width: 300px;
+    height: 300px;
+    background: #b9c941;
+    padding: 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}*/
+
+
+

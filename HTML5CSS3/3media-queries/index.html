@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="estilo.css">
+    <link rel="stylesheet" type="text/css" media="print" href="estilo-impressao.css">
+    <style type="text/css">
+        /*Extra Small devices */
+        @media (max-width: 575.98px) { /*no maximo de 575*/
+            body {
+                background: rgb(255, 255, 255);
+            }
+        }
+
+        /*Small devices (landscape phones)*/
+        @media (min-width: 576px) and (max-width: 767.98px) { /*no minimo de 576*/
+            body {
+                background: red;
+            }
+        }
+
+        /*Medium devices (tablets, 768px e superior)*/
+        @media (min-width: 768px) {
+            body {
+                background: blue;
+            }
+        }
+
+        /*Large devices (desktops, 992px e superior)*/
+        @media (min-width: 992px) {
+           body {
+                background: yellow;
+           }
+        }
+
+        /*Extra large devices (large desktops, 1200px e superior)*/
+        @media (min-width: 1200px) {
+            body{
+                background: gray;
+            }
+        }
+    </style>
+    <title>Media Types</title>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet
+
+    </p>
+</body>
+</html>

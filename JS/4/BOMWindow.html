@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+        
+        var janela
+
+        function abrirPopUp(){
+            janela = window.open('file:///C:/Users/reisg/OneDrive/Desktop/devBack/front-end/JS(DOM-ArvoreDeTags)/3/DomManipulandoClassElementos.html', 'nova_janela', 'width=200, height=100')
+        }
+
+        function fecharPopUp(){
+            janela.close()
+        }
+    </script>
+
+</head>
+<body>
+    
+    <button onclick="abrirPopUp()" type="button">Abriri Janela</button>
+    <button type="button" onclick="fecharPopUp()">Fechar Janela</button>
+    <button type="button" onclick="window.print()">imprimir pagina</button>
+
+</body>
+</html>
